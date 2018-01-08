@@ -13,13 +13,26 @@
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
-      <version>{scala.version}</version>
+      <version>${scala.version}</version>
     </dependency>
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-compiler</artifactId>
-      <version>{scala.version}</version>
+      <version>${scala.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4s</groupId>
+      <artifactId>slf4s-api_2.12</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -31,6 +44,18 @@
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
         <version>3.3.1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Private-Package>de.erna</Private-Package>
+            <Bundle-Activator>de.erna.ScalaEngineActivator</Bundle-Activator>
+          </instructions>
+        </configuration>
       </plugin>
     </plugins>
   </build>
