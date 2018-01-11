@@ -12,6 +12,35 @@
   </properties>
 
   <dependencies>
+    <!--<dependency>-->
+      <!--<groupId>com.sun</groupId>-->
+      <!--<artifactId>tools</artifactId>-->
+      <!--<version>1.8.0</version>-->
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${java.home}/../lib/tools.jar</systemPath>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>com.sun</groupId>-->
+      <!--<artifactId>rt</artifactId>-->
+      <!--<version>1.8.0</version>-->
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${java.home}/lib/rt.jar</systemPath>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>com.sun</groupId>-->
+      <!--<artifactId>charsets</artifactId>-->
+      <!--<version>1.8.0</version>-->
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${java.home}/lib/charsets.jar</systemPath>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>com.sun</groupId>-->
+      <!--<artifactId>sunec</artifactId>-->
+      <!--<version>1.8.0</version>-->
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${java.home}/lib/ext/sunec.jar</systemPath>-->
+    <!--</dependency>-->
+
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
@@ -34,6 +63,24 @@
       <artifactId>slf4s-api_${scala-major.version}</artifactId>
       <version>1.7.25</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.lihaoyi</groupId>
+      <artifactId>ammonite_${scala.version}</artifactId>
+      <version>1.0.3-24-9251456</version>
+    </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>org.spire-math</groupId>-->
+      <!--<artifactId>jawn-parser_${scala-major.version}</artifactId>-->
+      <!--<version>0.11.0</version>-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+      <!--<groupId>org.scalaj</groupId>-->
+      <!--<artifactId>scalaj-http_${scala-major.version}</artifactId>-->
+      <!--<version>2.3.0</version>-->
+    <!--</dependency>-->
 
   </dependencies>
 
@@ -65,6 +112,7 @@
           <instructions>
             <Private-Package>de.erna</Private-Package>
             <Bundle-Activator>de.erna.ScalaEngineActivator</Bundle-Activator>            
+            <!--<Embed-Dependency>slf4s-api_${scala-major.version},jawn-parser_${scala-major.version},scalaj-http_${scala-major.version},tools,rt,charsets,sunec,groupId=com.github.*|com.lihaoyi|io.get-coursier|jline|org.javassist|org.scalaz|org.spire</Embed-Dependency>-->
             <Embed-Dependency>slf4s-api_${scala-major.version}</Embed-Dependency>
             <Embed-Transitive>true</Embed-Transitive>
           </instructions>
